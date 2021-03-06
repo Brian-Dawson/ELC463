@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="testbench_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="testbench" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="29041fs"></ZoomEndTime>
+      <Cursor1Time time="11540fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="300"></NameColumnWidth>
+      <ValueColumnWidth column_width="146"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="16" />
+   <wvobject fp_name="/testbench/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/reset" type="logic">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/instruction_from_testbench" type="array">
+      <obj_property name="ElementShortName">instruction_from_testbench[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction_from_testbench[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/instruction_from_testbench_transfer" type="array">
+      <obj_property name="ElementShortName">instruction_from_testbench_transfer[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction_from_testbench_transfer[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider97">
+      <obj_property name="label">Instruction Mem</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="group103" type="group">
+      <obj_property name="label">Instruction Memory</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/testbench/Instrucmem_inst/pc" type="array">
+         <obj_property name="ElementShortName">pc[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/Instrucmem_inst/instruction31_0" type="array">
+         <obj_property name="ElementShortName">instruction31_0[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction31_0[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider101">
+      <obj_property name="label">Program Counter</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="group102" type="group">
+      <obj_property name="label">Program Counter</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/testbench/uut/pc_inst/pc_input" type="array">
+         <obj_property name="ElementShortName">pc_input[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_input[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/pc_inst/pc_output" type="array">
+         <obj_property name="ElementShortName">pc_output[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_output[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/pc_inst/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/pc_inst/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider173">
+      <obj_property name="label">CPU Overall</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="group172" type="group">
+      <obj_property name="label">CPU Overall</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/uut/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider180">
+      <obj_property name="label">IFID</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="group181" type="group">
+      <obj_property name="label">IFID</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/uut/IFID_inst/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IFID_inst/instruction31_0_in" type="array">
+         <obj_property name="ElementShortName">instruction31_0_in[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction31_0_in[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IFID_inst/pc_in" type="array">
+         <obj_property name="ElementShortName">pc_in[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_in[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IFID_inst/instruction31_0_out" type="array">
+         <obj_property name="ElementShortName">instruction31_0_out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction31_0_out[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IFID_inst/pc_out" type="array">
+         <obj_property name="ElementShortName">pc_out[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_out[63:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider187">
+      <obj_property name="label">IDEX</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="group188" type="group">
+      <obj_property name="label">IDEX</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/pc_in" type="array">
+         <obj_property name="ElementShortName">pc_in[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_in[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/read_data_1_in" type="array">
+         <obj_property name="ElementShortName">read_data_1_in[63:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data_1_in[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/read_data_2_in" type="array">
+         <obj_property name="ElementShortName">read_data_2_in[63:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data_2_in[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/sign_extend_in" type="array">
+         <obj_property name="ElementShortName">sign_extend_in[63:0]</obj_property>
+         <obj_property name="ObjectShortName">sign_extend_in[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/instruction_31_to_21_in" type="array">
+         <obj_property name="ElementShortName">instruction_31_to_21_in[10:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction_31_to_21_in[10:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/instruction_4_to_0_in" type="array">
+         <obj_property name="ElementShortName">instruction_4_to_0_in[4:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction_4_to_0_in[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/alu_op_in" type="array">
+         <obj_property name="ElementShortName">alu_op_in[1:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_op_in[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/ALUSrc_in" type="logic">
+         <obj_property name="ElementShortName">ALUSrc_in</obj_property>
+         <obj_property name="ObjectShortName">ALUSrc_in</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/Branch_zero_in" type="logic">
+         <obj_property name="ElementShortName">Branch_zero_in</obj_property>
+         <obj_property name="ObjectShortName">Branch_zero_in</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/Memwrite_in" type="logic">
+         <obj_property name="ElementShortName">Memwrite_in</obj_property>
+         <obj_property name="ObjectShortName">Memwrite_in</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/Memread_in" type="logic">
+         <obj_property name="ElementShortName">Memread_in</obj_property>
+         <obj_property name="ObjectShortName">Memread_in</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/MemToReg_in" type="logic">
+         <obj_property name="ElementShortName">MemToReg_in</obj_property>
+         <obj_property name="ObjectShortName">MemToReg_in</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/RegWrite_in" type="logic">
+         <obj_property name="ElementShortName">RegWrite_in</obj_property>
+         <obj_property name="ObjectShortName">RegWrite_in</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/pc_out" type="array">
+         <obj_property name="ElementShortName">pc_out[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_out[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/read_data_1_out" type="array">
+         <obj_property name="ElementShortName">read_data_1_out[63:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data_1_out[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/read_data_2_out" type="array">
+         <obj_property name="ElementShortName">read_data_2_out[63:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data_2_out[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/sign_extend_out" type="array">
+         <obj_property name="ElementShortName">sign_extend_out[63:0]</obj_property>
+         <obj_property name="ObjectShortName">sign_extend_out[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/instruction_31_to_21_out" type="array">
+         <obj_property name="ElementShortName">instruction_31_to_21_out[10:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction_31_to_21_out[10:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/instruction_4_to_0_out" type="array">
+         <obj_property name="ElementShortName">instruction_4_to_0_out[4:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction_4_to_0_out[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/alu_op_out" type="array">
+         <obj_property name="ElementShortName">alu_op_out[1:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_op_out[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/ALUSrc_out" type="logic">
+         <obj_property name="ElementShortName">ALUSrc_out</obj_property>
+         <obj_property name="ObjectShortName">ALUSrc_out</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/Branch_zero_out" type="logic">
+         <obj_property name="ElementShortName">Branch_zero_out</obj_property>
+         <obj_property name="ObjectShortName">Branch_zero_out</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/Memwrite_out" type="logic">
+         <obj_property name="ElementShortName">Memwrite_out</obj_property>
+         <obj_property name="ObjectShortName">Memwrite_out</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/Memread_out" type="logic">
+         <obj_property name="ElementShortName">Memread_out</obj_property>
+         <obj_property name="ObjectShortName">Memread_out</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/MemToReg_out" type="logic">
+         <obj_property name="ElementShortName">MemToReg_out</obj_property>
+         <obj_property name="ObjectShortName">MemToReg_out</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/IDEX_inst/RegWrite_out" type="logic">
+         <obj_property name="ElementShortName">RegWrite_out</obj_property>
+         <obj_property name="ObjectShortName">RegWrite_out</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider217">
+      <obj_property name="label">Signextend</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="group216" type="group">
+      <obj_property name="label">Signextend</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/uut/extend_inst/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/extend_inst/unextended" type="array">
+         <obj_property name="ElementShortName">unextended[31:0]</obj_property>
+         <obj_property name="ObjectShortName">unextended[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/extend_inst/extended" type="array">
+         <obj_property name="ElementShortName">extended[63:0]</obj_property>
+         <obj_property name="ObjectShortName">extended[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/uut/extend_inst/temp" type="array">
+         <obj_property name="ElementShortName">temp[51:0]</obj_property>
+         <obj_property name="ObjectShortName">temp[51:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
