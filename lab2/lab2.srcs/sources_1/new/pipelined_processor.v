@@ -1,4 +1,3 @@
-
 `timescale 1ns / 1ps
 
 
@@ -367,7 +366,7 @@
             output reg [63:0] y,
             output reg z
             );
-                always@(posedge clk)
+                always@(readdata1 or main_aluinput2 or ALU)
                 begin
                     case(ALU)
                     4'b0000: assign y = readdata1 & main_aluinput2;

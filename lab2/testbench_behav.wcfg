@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="23574fs"></ZoomStartTime>
-      <ZoomEndTime time="67286fs"></ZoomEndTime>
-      <Cursor1Time time="27484fs"></Cursor1Time>
+      <ZoomStartTime time="16666fs"></ZoomStartTime>
+      <ZoomEndTime time="116667fs"></ZoomEndTime>
+      <Cursor1Time time="100000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="300"></NameColumnWidth>
-      <ValueColumnWidth column_width="130"></ValueColumnWidth>
+      <ValueColumnWidth column_width="114"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="32" />
+   <WVObjectSize size="34" />
    <wvobject fp_name="/testbench/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -43,6 +43,7 @@
    <wvobject fp_name="group103" type="group">
       <obj_property name="label">Instruction Memory</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/testbench/Instrucmem_inst/pc" type="array">
          <obj_property name="ElementShortName">pc[63:0]</obj_property>
          <obj_property name="ObjectShortName">pc[63:0]</obj_property>
@@ -59,6 +60,22 @@
    <wvobject fp_name="group102" type="group">
       <obj_property name="label">Program Counter</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/CPU_Inst/pc_inst/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/pc_inst/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/pc_inst/pc_input" type="array">
+         <obj_property name="ElementShortName">pc_input[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_input[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/pc_inst/pc_output" type="array">
+         <obj_property name="ElementShortName">pc_output[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_output[63:0]</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject type="divider" fp_name="divider173">
       <obj_property name="label">CPU Overall</obj_property>
@@ -67,7 +84,246 @@
    <wvobject fp_name="group172" type="group">
       <obj_property name="label">CPU Overall</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/testbench/CPU_Inst/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/reset" type="logic">
+         <obj_property name="ElementShortName">reset</obj_property>
+         <obj_property name="ObjectShortName">reset</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/instruction_from_testbench" type="array">
+         <obj_property name="ElementShortName">instruction_from_testbench[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction_from_testbench[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/datamemreaddata_to_mux3" type="array">
+         <obj_property name="ElementShortName">datamemreaddata_to_mux3[63:0]</obj_property>
+         <obj_property name="ObjectShortName">datamemreaddata_to_mux3[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/pcoutput_to_testbench" type="array">
+         <obj_property name="ElementShortName">pcoutput_to_testbench[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pcoutput_to_testbench[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/mainalu_to_datamemreaddata" type="array">
+         <obj_property name="ElementShortName">mainalu_to_datamemreaddata[63:0]</obj_property>
+         <obj_property name="ObjectShortName">mainalu_to_datamemreaddata[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/readdata2_to_datamemwritedata" type="array">
+         <obj_property name="ElementShortName">readdata2_to_datamemwritedata[63:0]</obj_property>
+         <obj_property name="ObjectShortName">readdata2_to_datamemwritedata[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/memwrite" type="logic">
+         <obj_property name="ElementShortName">memwrite</obj_property>
+         <obj_property name="ObjectShortName">memwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/memread" type="logic">
+         <obj_property name="ElementShortName">memread</obj_property>
+         <obj_property name="ObjectShortName">memread</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/ins_mem_31_to_0_from_ins_to_IFID" type="array">
+         <obj_property name="ElementShortName">ins_mem_31_to_0_from_ins_to_IFID[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ins_mem_31_to_0_from_ins_to_IFID[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/pc_from_pc_to_IFID" type="array">
+         <obj_property name="ElementShortName">pc_from_pc_to_IFID[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_from_pc_to_IFID[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/mux4_to_pcinput" type="array">
+         <obj_property name="ElementShortName">mux4_to_pcinput[63:0]</obj_property>
+         <obj_property name="ObjectShortName">mux4_to_pcinput[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/pc_from_IFID_to_IDEX" type="array">
+         <obj_property name="ElementShortName">pc_from_IFID_to_IDEX[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_from_IFID_to_IDEX[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/ins_mem_31_to_0_from_IFID_to_all_things" type="array">
+         <obj_property name="ElementShortName">ins_mem_31_to_0_from_IFID_to_all_things[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ins_mem_31_to_0_from_IFID_to_all_things[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_ALU_op_from_IFID" type="array">
+         <obj_property name="ElementShortName">control_ALU_op_from_IFID[1:0]</obj_property>
+         <obj_property name="ObjectShortName">control_ALU_op_from_IFID[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_ALU_src_from_IFID" type="logic">
+         <obj_property name="ElementShortName">control_ALU_src_from_IFID</obj_property>
+         <obj_property name="ObjectShortName">control_ALU_src_from_IFID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_Branch_zero_from_IFID" type="logic">
+         <obj_property name="ElementShortName">control_Branch_zero_from_IFID</obj_property>
+         <obj_property name="ObjectShortName">control_Branch_zero_from_IFID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_Memwrite_from_IFID" type="logic">
+         <obj_property name="ElementShortName">control_Memwrite_from_IFID</obj_property>
+         <obj_property name="ObjectShortName">control_Memwrite_from_IFID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_Memread__from_IFID" type="logic">
+         <obj_property name="ElementShortName">control_Memread__from_IFID</obj_property>
+         <obj_property name="ObjectShortName">control_Memread__from_IFID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_MemToReg_from_IFID" type="logic">
+         <obj_property name="ElementShortName">control_MemToReg_from_IFID</obj_property>
+         <obj_property name="ObjectShortName">control_MemToReg_from_IFID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_RegWrite_from_IFID" type="logic">
+         <obj_property name="ElementShortName">control_RegWrite_from_IFID</obj_property>
+         <obj_property name="ObjectShortName">control_RegWrite_from_IFID</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/mux1_to_read_reg_2" type="array">
+         <obj_property name="ElementShortName">mux1_to_read_reg_2[4:0]</obj_property>
+         <obj_property name="ObjectShortName">mux1_to_read_reg_2[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/signextend_to_IDEX" type="array">
+         <obj_property name="ElementShortName">signextend_to_IDEX[63:0]</obj_property>
+         <obj_property name="ObjectShortName">signextend_to_IDEX[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/reg_out_1_to_IDEX" type="array">
+         <obj_property name="ElementShortName">reg_out_1_to_IDEX[63:0]</obj_property>
+         <obj_property name="ObjectShortName">reg_out_1_to_IDEX[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/reg_out_2_to_IDEX" type="array">
+         <obj_property name="ElementShortName">reg_out_2_to_IDEX[63:0]</obj_property>
+         <obj_property name="ObjectShortName">reg_out_2_to_IDEX[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_ALU_op_from_IDEX" type="array">
+         <obj_property name="ElementShortName">control_ALU_op_from_IDEX[1:0]</obj_property>
+         <obj_property name="ObjectShortName">control_ALU_op_from_IDEX[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_ALU_src_from_IDEX" type="logic">
+         <obj_property name="ElementShortName">control_ALU_src_from_IDEX</obj_property>
+         <obj_property name="ObjectShortName">control_ALU_src_from_IDEX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_Branch_zero_from_IDEX" type="logic">
+         <obj_property name="ElementShortName">control_Branch_zero_from_IDEX</obj_property>
+         <obj_property name="ObjectShortName">control_Branch_zero_from_IDEX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_Memwrite_from_IDEX" type="logic">
+         <obj_property name="ElementShortName">control_Memwrite_from_IDEX</obj_property>
+         <obj_property name="ObjectShortName">control_Memwrite_from_IDEX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_Memread__from_IDEX" type="logic">
+         <obj_property name="ElementShortName">control_Memread__from_IDEX</obj_property>
+         <obj_property name="ObjectShortName">control_Memread__from_IDEX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_MemToReg_from_IDEX" type="logic">
+         <obj_property name="ElementShortName">control_MemToReg_from_IDEX</obj_property>
+         <obj_property name="ObjectShortName">control_MemToReg_from_IDEX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_RegWrite_from_IDEX" type="logic">
+         <obj_property name="ElementShortName">control_RegWrite_from_IDEX</obj_property>
+         <obj_property name="ObjectShortName">control_RegWrite_from_IDEX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/alu_control_to_alu" type="array">
+         <obj_property name="ElementShortName">alu_control_to_alu[3:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_control_to_alu[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/pc_from_IDEX_to_add" type="array">
+         <obj_property name="ElementShortName">pc_from_IDEX_to_add[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_from_IDEX_to_add[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/reg_out_1_from_IDEX_to_alu" type="array">
+         <obj_property name="ElementShortName">reg_out_1_from_IDEX_to_alu[63:0]</obj_property>
+         <obj_property name="ObjectShortName">reg_out_1_from_IDEX_to_alu[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/reg_out_2_from_IDEX_to_mux2_and_EXMEM" type="array">
+         <obj_property name="ElementShortName">reg_out_2_from_IDEX_to_mux2_and_EXMEM[63:0]</obj_property>
+         <obj_property name="ObjectShortName">reg_out_2_from_IDEX_to_mux2_and_EXMEM[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/signextend_from_IDEX_to_add_and_mux2" type="array">
+         <obj_property name="ElementShortName">signextend_from_IDEX_to_add_and_mux2[63:0]</obj_property>
+         <obj_property name="ObjectShortName">signextend_from_IDEX_to_add_and_mux2[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/mux2_to_alu" type="array">
+         <obj_property name="ElementShortName">mux2_to_alu[63:0]</obj_property>
+         <obj_property name="ObjectShortName">mux2_to_alu[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/add_to_EXMEM" type="array">
+         <obj_property name="ElementShortName">add_to_EXMEM[63:0]</obj_property>
+         <obj_property name="ObjectShortName">add_to_EXMEM[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/alu_to_EXMEM" type="array">
+         <obj_property name="ElementShortName">alu_to_EXMEM[63:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_to_EXMEM[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/ALUZero_to_EXMEM" type="logic">
+         <obj_property name="ElementShortName">ALUZero_to_EXMEM</obj_property>
+         <obj_property name="ObjectShortName">ALUZero_to_EXMEM</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/IDEX_to_ALUControl" type="array">
+         <obj_property name="ElementShortName">IDEX_to_ALUControl[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IDEX_to_ALUControl[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/IDEX_to_EXMEM" type="array">
+         <obj_property name="ElementShortName">IDEX_to_EXMEM[31:0]</obj_property>
+         <obj_property name="ObjectShortName">IDEX_to_EXMEM[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/add_from_EXMEM_to_mux4" type="array">
+         <obj_property name="ElementShortName">add_from_EXMEM_to_mux4[63:0]</obj_property>
+         <obj_property name="ObjectShortName">add_from_EXMEM_to_mux4[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/alu_result_to_data_mem_and_MEMWB" type="array">
+         <obj_property name="ElementShortName">alu_result_to_data_mem_and_MEMWB[63:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_result_to_data_mem_and_MEMWB[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/reg_2_from_EXMEM_to_datamem" type="array">
+         <obj_property name="ElementShortName">reg_2_from_EXMEM_to_datamem[63:0]</obj_property>
+         <obj_property name="ObjectShortName">reg_2_from_EXMEM_to_datamem[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/ins_from_EXMEM_to_MEMWB" type="array">
+         <obj_property name="ElementShortName">ins_from_EXMEM_to_MEMWB[63:0]</obj_property>
+         <obj_property name="ObjectShortName">ins_from_EXMEM_to_MEMWB[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_Memwrite_from_EXMEM" type="logic">
+         <obj_property name="ElementShortName">control_Memwrite_from_EXMEM</obj_property>
+         <obj_property name="ObjectShortName">control_Memwrite_from_EXMEM</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_Memread_from_EXMEM" type="logic">
+         <obj_property name="ElementShortName">control_Memread_from_EXMEM</obj_property>
+         <obj_property name="ObjectShortName">control_Memread_from_EXMEM</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_branch_zero_from_EXMEM" type="logic">
+         <obj_property name="ElementShortName">control_branch_zero_from_EXMEM</obj_property>
+         <obj_property name="ObjectShortName">control_branch_zero_from_EXMEM</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/ALUZero_from_EXMEM_to_branch" type="logic">
+         <obj_property name="ElementShortName">ALUZero_from_EXMEM_to_branch</obj_property>
+         <obj_property name="ObjectShortName">ALUZero_from_EXMEM_to_branch</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/PCSrc" type="logic">
+         <obj_property name="ElementShortName">PCSrc</obj_property>
+         <obj_property name="ObjectShortName">PCSrc</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_MemToReg_from_EXMEM_to_MEMWB" type="logic">
+         <obj_property name="ElementShortName">control_MemToReg_from_EXMEM_to_MEMWB</obj_property>
+         <obj_property name="ObjectShortName">control_MemToReg_from_EXMEM_to_MEMWB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_RegWrite_from_EXMEM_to_MEMWB" type="logic">
+         <obj_property name="ElementShortName">control_RegWrite_from_EXMEM_to_MEMWB</obj_property>
+         <obj_property name="ObjectShortName">control_RegWrite_from_EXMEM_to_MEMWB</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_MemToReg_from_MEMWB_to_mux3" type="logic">
+         <obj_property name="ElementShortName">control_MemToReg_from_MEMWB_to_mux3</obj_property>
+         <obj_property name="ObjectShortName">control_MemToReg_from_MEMWB_to_mux3</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_RegWrite_from_MEMWB_to_registers" type="logic">
+         <obj_property name="ElementShortName">control_RegWrite_from_MEMWB_to_registers</obj_property>
+         <obj_property name="ObjectShortName">control_RegWrite_from_MEMWB_to_registers</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/MEMWB_to_write_reg" type="array">
+         <obj_property name="ElementShortName">MEMWB_to_write_reg[63:0]</obj_property>
+         <obj_property name="ObjectShortName">MEMWB_to_write_reg[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/alu_result_from_MEMWB_to_mux3" type="array">
+         <obj_property name="ElementShortName">alu_result_from_MEMWB_to_mux3[63:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_result_from_MEMWB_to_mux3[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/datamem_from_MEMWB_to_mux3" type="array">
+         <obj_property name="ElementShortName">datamem_from_MEMWB_to_mux3[63:0]</obj_property>
+         <obj_property name="ObjectShortName">datamem_from_MEMWB_to_mux3[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/mux3_to_write_data" type="array">
+         <obj_property name="ElementShortName">mux3_to_write_data[63:0]</obj_property>
+         <obj_property name="ObjectShortName">mux3_to_write_data[63:0]</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject type="divider" fp_name="divider180">
       <obj_property name="label">IFID</obj_property>
@@ -76,25 +332,26 @@
    <wvobject fp_name="group181" type="group">
       <obj_property name="label">IFID</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
-      </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/instruction31_0_in" type="array">
-         <obj_property name="ElementShortName">instruction31_0_in[31:0]</obj_property>
-         <obj_property name="ObjectShortName">instruction31_0_in[31:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/pc_in" type="array">
          <obj_property name="ElementShortName">pc_in[63:0]</obj_property>
          <obj_property name="ObjectShortName">pc_in[63:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/instruction31_0_out" type="array">
-         <obj_property name="ElementShortName">instruction31_0_out[31:0]</obj_property>
-         <obj_property name="ObjectShortName">instruction31_0_out[31:0]</obj_property>
-      </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/pc_out" type="array">
          <obj_property name="ElementShortName">pc_out[63:0]</obj_property>
          <obj_property name="ObjectShortName">pc_out[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/instruction31_0_in" type="array">
+         <obj_property name="ElementShortName">instruction31_0_in[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction31_0_in[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/instruction31_0_out" type="array">
+         <obj_property name="ElementShortName">instruction31_0_out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction31_0_out[31:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject type="divider" fp_name="divider187">
@@ -220,6 +477,18 @@
    <wvobject fp_name="group216" type="group">
       <obj_property name="label">Signextend</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/CPU_Inst/extend_inst/unextended" type="array">
+         <obj_property name="ElementShortName">unextended[31:0]</obj_property>
+         <obj_property name="ObjectShortName">unextended[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/extend_inst/extended" type="array">
+         <obj_property name="ElementShortName">extended[63:0]</obj_property>
+         <obj_property name="ObjectShortName">extended[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/extend_inst/temp" type="array">
+         <obj_property name="ElementShortName">temp[51:0]</obj_property>
+         <obj_property name="ObjectShortName">temp[51:0]</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject type="divider" fp_name="divider118">
       <obj_property name="label">EXMEM</obj_property>
@@ -372,10 +641,7 @@
    <wvobject fp_name="group156" type="group">
       <obj_property name="label">Datamemory</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/testbench/datamem_inst/clk" type="logic">
-         <obj_property name="ElementShortName">clk</obj_property>
-         <obj_property name="ObjectShortName">clk</obj_property>
-      </wvobject>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/testbench/datamem_inst/main_aluresult" type="array">
          <obj_property name="ElementShortName">main_aluresult[63:0]</obj_property>
          <obj_property name="ObjectShortName">main_aluresult[63:0]</obj_property>
@@ -383,6 +649,10 @@
       <wvobject fp_name="/testbench/datamem_inst/datamem_writedata" type="array">
          <obj_property name="ElementShortName">datamem_writedata[63:0]</obj_property>
          <obj_property name="ObjectShortName">datamem_writedata[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/datamem_inst/storage" type="array">
+         <obj_property name="ElementShortName">storage[31:0][63:0]</obj_property>
+         <obj_property name="ObjectShortName">storage[31:0][63:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/datamem_inst/memwrite" type="logic">
          <obj_property name="ElementShortName">memwrite</obj_property>
@@ -404,10 +674,6 @@
    <wvobject fp_name="group166" type="group">
       <obj_property name="label">Instructionmemory</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/testbench/Instrucmem_inst/clk" type="logic">
-         <obj_property name="ElementShortName">clk</obj_property>
-         <obj_property name="ObjectShortName">clk</obj_property>
-      </wvobject>
       <wvobject fp_name="/testbench/Instrucmem_inst/pc" type="array">
          <obj_property name="ElementShortName">pc[63:0]</obj_property>
          <obj_property name="ObjectShortName">pc[63:0]</obj_property>
@@ -428,10 +694,6 @@
    <wvobject fp_name="group172" type="group">
       <obj_property name="label">Mux3</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/testbench/CPU_Inst/mux3_inst/clk" type="logic">
-         <obj_property name="ElementShortName">clk</obj_property>
-         <obj_property name="ObjectShortName">clk</obj_property>
-      </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/mux3_inst/memtoreg" type="logic">
          <obj_property name="ElementShortName">memtoreg</obj_property>
          <obj_property name="ObjectShortName">memtoreg</obj_property>
@@ -456,10 +718,6 @@
    <wvobject fp_name="group178" type="group">
       <obj_property name="label">Alu</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/testbench/CPU_Inst/alu_inst/clk" type="logic">
-         <obj_property name="ElementShortName">clk</obj_property>
-         <obj_property name="ObjectShortName">clk</obj_property>
-      </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/alu_inst/readdata1" type="array">
          <obj_property name="ElementShortName">readdata1[63:0]</obj_property>
          <obj_property name="ObjectShortName">readdata1[63:0]</obj_property>
@@ -539,6 +797,46 @@
       <wvobject fp_name="/testbench/CPU_Inst/reg_inst/i" type="array">
          <obj_property name="ElementShortName">i[31:0]</obj_property>
          <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject type="divider" fp_name="divider758">
+      <obj_property name="label">Control</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject fp_name="group759" type="group">
+      <obj_property name="label">Control</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/CPU_Inst/control_inst/opcode" type="array">
+         <obj_property name="ElementShortName">opcode[10:0]</obj_property>
+         <obj_property name="ObjectShortName">opcode[10:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_inst/aluop" type="array">
+         <obj_property name="ElementShortName">aluop[1:0]</obj_property>
+         <obj_property name="ObjectShortName">aluop[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_inst/alusrc" type="logic">
+         <obj_property name="ElementShortName">alusrc</obj_property>
+         <obj_property name="ObjectShortName">alusrc</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_inst/memtoreg" type="logic">
+         <obj_property name="ElementShortName">memtoreg</obj_property>
+         <obj_property name="ObjectShortName">memtoreg</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_inst/regwrite" type="logic">
+         <obj_property name="ElementShortName">regwrite</obj_property>
+         <obj_property name="ObjectShortName">regwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_inst/memread" type="logic">
+         <obj_property name="ElementShortName">memread</obj_property>
+         <obj_property name="ObjectShortName">memread</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_inst/memwrite" type="logic">
+         <obj_property name="ElementShortName">memwrite</obj_property>
+         <obj_property name="ObjectShortName">memwrite</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/control_inst/branch" type="logic">
+         <obj_property name="ElementShortName">branch</obj_property>
+         <obj_property name="ObjectShortName">branch</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>
