@@ -19,5 +19,3 @@ INFO: [VRFC 10-311] analyzing module datamemory
 INFO: [VRFC 10-311] analyzing module instructionmemory
 INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Verilogprojects/ELC463/lab2/lab2.srcs/sim_1/new/testbench.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module testbench
-INFO: [VRFC 10-2263] Analyzing Verilog file "D:/Verilogprojects/ELC463/lab2/lab2.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
-INFO: [VRFC 10-311] analyzing module glbl

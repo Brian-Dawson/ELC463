@@ -164,7 +164,7 @@
             //MEMWB Instantiation
             
             MEMWB MEMWB_inst(.clk(clk), .RegWrite_in(control_RegWrite_from_EXMEM_to_MEMWB), .MemToReg_in(control_MemToReg_from_EXMEM_to_MEMWB),
-            .data_memory_in(data_mem_to_MEMWB), .alu_result_in(alu_result_to_data_mem_and_MEMWB), .instruction_4_to_0_in(ins_from_EXMEM_to_MEMWB[4:0]),
+            .data_memory_in(datamemreaddata_to_mux3), .alu_result_in(alu_result_to_data_mem_and_MEMWB), .instruction_4_to_0_in(ins_from_EXMEM_to_MEMWB[4:0]),
             .RegWrite_out(control_RegWrite_from_MEMWB_to_registers), .MemToReg_out(control_MemToReg_from_MEMWB_to_mux3), .data_memory_out(datamem_from_MEMWB_to_mux3),
             .alu_result_out(alu_result_from_MEMWB_to_mux3), .instruction_4_to_0_out(MEMWB_to_write_reg));
             
@@ -214,7 +214,7 @@
             .writedata(mux3_to_write_data),.readdata1(reg_out_1_to_IDEX),.readdata2(reg_out_2_to_IDEX),.reset(reset),.clk(clk),.regwrite(control_RegWrite_from_MEMWB_to_registers));
             
             //Signextend instantiation 
-            signextend extend_inst (.clk(clk), .unextended(ins_mem_31_to_0_from_IFID_to_all_things), .extended(signextend_from_IDEX_to_add_and_mux2));
+            signextend extend_inst (.clk(clk), .unextended(ins_mem_31_to_0_from_IFID_to_all_things), .extended(signextend_to_IDEX));
             
             //ALU control instantiation 
             alu_control alucontrol_inst (.clk(clk), .aluop(control_ALU_op_from_IDEX), .instruction31_21(IDEX_to_ALUControl), .alu_controlline(alu_control_to_alu));
@@ -703,7 +703,7 @@ module registerfile (
             end
         end
         
-        always@(posedge clk) begin
+        always@(*) begin
             if(memwrite==1'b1)begin
                 storage[main_aluresult]=datamem_writedata;
             end

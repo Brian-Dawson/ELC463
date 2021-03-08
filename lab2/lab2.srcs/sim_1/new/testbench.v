@@ -1,23 +1,4 @@
 `timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 02/23/2021 02:29:34 PM
-// Design Name: 
-// Module Name: testbench
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
 
 module testbench(
     );
@@ -37,19 +18,19 @@ module testbench(
     wire memwrite;
     wire [63:0] mainalu_to_datamemreaddata;
     wire [63:0] readdata2_to_datamemwritedata;
-    wire[31:0] instruction_from_testbench_transfer;
-    wire[63:0]datamemreaddata_to_mux3_transfer;
+    wire [31:0] instruction_from_testbench_transfer;
+    wire [63:0]datamemreaddata_to_mux3_transfer;
   
-    CPU uut (
+    CPU CPU_Inst(
     .clk(clk),
     .reset(reset),
     .instruction_from_testbench(instruction_from_testbench),
+    .datamemreaddata_to_mux3(datamemreaddata_to_mux3),
     .pcoutput_to_testbench(pcoutput_from_cpu),
     .mainalu_to_datamemreaddata(mainalu_to_datamemreaddata),
     .readdata2_to_datamemwritedata(readdata2_to_datamemwritedata),
     .memwrite(memwrite),
-    .memread(memread),
-    .datamemreaddata_to_mux3(datamemreaddata_to_mux3)
+    .memread(memread)
     );
     initial begin
     clk = 0;
@@ -58,7 +39,7 @@ module testbench(
   
     
     end
-    always@(posedge clk)begin
+    always@(*)begin
     mainalu_to_datamemreaddata_transfer = mainalu_to_datamemreaddata;
     readdata2_to_datamemwritedata_transfer=readdata2_to_datamemwritedata;
     memwrite_transfer= memwrite;
@@ -70,7 +51,7 @@ module testbench(
     always@(posedge clk)begin
     datamemreaddata_to_mux3 = datamemreaddata_to_mux3_transfer;
     end
-    always@(posedge clk)begin
+    always@(*)begin
     pc_to_readaddress=pcoutput_from_cpu;
     end
   
