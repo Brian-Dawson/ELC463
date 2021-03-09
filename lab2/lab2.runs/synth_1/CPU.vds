@@ -1,0 +1,48 @@
+#-----------------------------------------------------------
+# Vivado v2020.1 (64-bit)
+# SW Build 2902540 on Wed May 27 19:54:49 MDT 2020
+# IP Build 2902112 on Wed May 27 22:43:36 MDT 2020
+# Start of session at: Mon Mar  8 19:48:46 2021
+# Process ID: 628
+# Current directory: D:/Verilogprojects/ELC463/lab2/lab2.runs/synth_1
+# Command line: vivado.exe -log CPU.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source CPU.tcl
+# Log file: D:/Verilogprojects/ELC463/lab2/lab2.runs/synth_1/CPU.vds
+# Journal file: D:/Verilogprojects/ELC463/lab2/lab2.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source CPU.tcl -notrace
+Command: synth_design -top CPU -part xc7a200tsbg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a200t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 9752
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1024.227 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'CPU' [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:4]
+INFO: [Synth 8-6157] synthesizing module 'add' [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:548]
+INFO: [Synth 8-6155] done synthesizing module 'add' (1#1) [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:548]
+INFO: [Synth 8-6157] synthesizing module 'IFID' [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:224]
+INFO: [Synth 8-6155] done synthesizing module 'IFID' (2#1) [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:224]
+INFO: [Synth 8-6157] synthesizing module 'IDEX' [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:239]
+INFO: [Synth 8-6155] done synthesizing module 'IDEX' (3#1) [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:239]
+INFO: [Synth 8-6157] synthesizing module 'EXMEM' [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:292]
+INFO: [Synth 8-6155] done synthesizing module 'EXMEM' (4#1) [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:292]
+INFO: [Synth 8-6157] synthesizing module 'MEMWB' [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:335]
+INFO: [Synth 8-6155] done synthesizing module 'MEMWB' (5#1) [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:335]
+WARNING: [Synth 8-689] width (64) of port connection 'instruction_4_to_0_out' does not match port width (5) of module 'MEMWB' [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:168]
+INFO: [Synth 8-6157] synthesizing module 'Alu' [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:361]
+ERROR: [Synth 8-27] procedural assign not supported [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:372]
+INFO: [Synth 8-155] case statement is not full and has no default [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:371]
+ERROR: [Synth 8-6156] failed synthesizing module 'Alu' [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:361]
+ERROR: [Synth 8-6156] failed synthesizing module 'CPU' [D:/Verilogprojects/ELC463/lab2/lab2.srcs/sources_1/new/pipelined_processor.v:4]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1024.227 ; gain = 0.000
+---------------------------------------------------------------------------------
+synthesize failed
+INFO: [Common 17-83] Releasing license: Synthesis
+18 Infos, 1 Warnings, 0 Critical Warnings and 4 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+INFO: [Common 17-206] Exiting Vivado at Mon Mar  8 19:48:54 2021...

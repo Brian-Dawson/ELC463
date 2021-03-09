@@ -57,7 +57,7 @@ module testbench(
   
     instructionmemory
     Instrucmem_inst (.clk(clk), .pc(pc_to_readaddress),.instruction31_0(instruction_from_testbench_transfer));
-    always@(posedge clk)begin
+    always@(*)begin
     instruction_from_testbench=instruction_from_testbench_transfer;
     
     end

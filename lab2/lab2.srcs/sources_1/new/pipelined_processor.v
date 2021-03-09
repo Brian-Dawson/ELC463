@@ -12,14 +12,6 @@
             output reg memwrite,memread
                 );
             
-/*            reg [10:0] instruction31_21_to_control;
-            reg [10:0] instruction31_21_to_alu;
-            reg [31:0] instruction31_0_to_signextend;
-            reg [4:0] instruction20_16_to_mux1;
-            reg [4:0] instruction9_5_to_readregaddr1;
-            reg [4:0] instruction4_0_to_mux1;
-            reg [4:0] instruction4_0_to_writeregaddr;*/
-            
             //Control lines from beginning to IFID and inbetween stuff
             reg[31:0] ins_mem_31_to_0_from_ins_to_IFID;
             wire [63:0] pc_from_pc_to_IFID;
@@ -86,51 +78,6 @@
             wire [63:0] alu_result_from_MEMWB_to_mux3;
             wire [63:0] datamem_from_MEMWB_to_mux3;
             wire [63:0] mux3_to_write_data;
-            
-            //Control lines
-/*            wire reg2loc_to_mux1;
-            wire [1:0] aluop_to_alucontrol;
-            wire memtoreg_to_mux3;
-            wire alusrc_to_mux2;
-            wire regwrite_to_regfile;
-            wire memread_to_datamem;
-            wire memwrite_to_datamem;*/
-            
-            // Mux 4 wires
-           /* wire [63:0] mux4_to_pcinput;
-            wire [63:0] pcalu_to_mux4;
-            wire [63:0] pcoutput_to_shiftalu;
-            wire shiftalu_to_mux4;
-            wire cbz_to_mux4;
-            wire [63:0] signextended_to_shiftalu;
-            wire branch_to_cbz;
-            wire andout;
-            wire mainaluzero_to_cbz;
-            wire [63:0] mainalu_result;
-            wire [4:0] mux1_to_readregaddr2;
-            wire [63:0] readdata1_to_mainalu;
-            wire [63:0] readdata2_to_mux2;
-            wire [63:0] signextended_to_mux2;
-            wire [63:0] mux2_to_mainalu;
-            wire [3:0] alu_to_mainalu;
-            wire [63:0] mainalu_to_mux3;
-            wire [63:0] mux3_to_writedata;*/
-            
-            //Branch AND
-            
-//            assign andout = (branch_to_cbz & mainaluzero_to_cbz);
-            
-            //Testbench to instruction
-            
-/*            always @ (posedge clk) begin
-            instruction31_21_to_control = instruction_from_testbench[31:21];
-            instruction31_21_to_alu = instruction_from_testbench[31:21];
-            instruction31_0_to_signextend = instruction_from_testbench;
-            instruction20_16_to_mux1 = instruction_from_testbench[20:16];
-            instruction9_5_to_readregaddr1 = instruction_from_testbench[9:5];
-            instruction4_0_to_mux1 = instruction_from_testbench[4:0];
-            instruction4_0_to_writeregaddr = instruction_from_testbench[4:0];
-            end*/
 
               always @ (posedge clk) begin
               ins_mem_31_to_0_from_ins_to_IFID = instruction_from_testbench;
@@ -216,7 +163,7 @@
             signextend extend_inst (.clk(clk), .unextended(ins_mem_31_to_0_from_IFID_to_all_things), .extended(signextend_to_IDEX));
             
             //ALU control instantiation 
-            alu_control alucontrol_inst (.clk(clk), .aluop(control_ALU_op_from_IDEX), .instruction31_21(IDEX_to_ALUControl), .alu_controlline(alu_control_to_alu));
+            alu_control alucontrol_inst (.clk(clk), .aluop(control_ALU_op_from_IDEX), .instruction31_21(IDEX_to_ALUControl[31:21]), .alu_controlline(alu_control_to_alu));
         
     endmodule
     
@@ -366,7 +313,7 @@
             output reg [63:0] y,
             output reg z
             );
-                always@(readdata1 or main_aluinput2 or ALU)
+                always@(readdata1, main_aluinput2)
                 begin
                     case(ALU)
                     4'b0000: assign y = readdata1 & main_aluinput2;
@@ -599,40 +546,7 @@ module registerfile (
         end
     always@(posedge clk)begin
         if(regwrite == 1'b1)begin
-             case(writeregaddr) // Decoder for part b. of register file
-                   5'b00000: regs[0] = writedata;
-                   5'b00001: regs[1] = writedata;
-                   5'b00010: regs[2] = writedata;
-                   5'b00011: regs[3] = writedata;
-                   5'b00100: regs[4] = writedata;
-                   5'b00101: regs[5] = writedata;
-                   5'b00110: regs[6] = writedata;
-                   5'b00111: regs[7] = writedata;
-                   5'b01000: regs[8] = writedata;
-                   5'b01001: regs[9] = writedata;
-                   5'b01010: regs[10] = writedata;
-                   5'b01011: regs[11] = writedata;
-                   5'b01100: regs[12] = writedata;
-                   5'b01101: regs[13] = writedata;
-                   5'b01110: regs[14] = writedata;
-                   5'b01111: regs[15] = writedata;
-                   5'b10000: regs[16] = writedata;
-                   5'b10001: regs[17] = writedata;
-                   5'b10010: regs[18] = writedata;
-                   5'b10011: regs[19] = writedata;
-                   5'b10100: regs[20] = writedata;
-                   5'b10101: regs[21] = writedata;
-                   5'b10110: regs[22] = writedata;
-                   5'b10111: regs[23] = writedata;
-                   5'b11000: regs[24] = writedata;
-                   5'b11001: regs[25] = writedata;
-                   5'b11010: regs[26] = writedata;
-                   5'b11011: regs[27] = writedata;
-                   5'b11100: regs[28] = writedata;
-                   5'b11101: regs[29] = writedata;
-                   5'b11110: regs[30] = writedata;
-                   5'b11111: regs[31] = writedata;
-                endcase
+                   regs[writeregaddr] = writedata;
             end
         end
     endmodule
