@@ -79,7 +79,7 @@
             wire [63:0] datamem_from_MEMWB_to_mux3;
             wire [63:0] mux3_to_write_data;
 
-              always @ (posedge clk) begin
+              always @ (*) begin
               ins_mem_31_to_0_from_ins_to_IFID = instruction_from_testbench;
               end
             
@@ -118,7 +118,7 @@
             //ALU Instantiation
             Alu alu_inst (.clk(clk), .readdata1(reg_out_1_from_IDEX_to_alu), .main_aluinput2(mux2_to_alu), .ALU(alu_control_to_alu), .y(alu_to_EXMEM), .z(ALUZero_to_EXMEM));
             
-            always @ (posedge clk) begin
+            always @ (*) begin
             mainalu_to_datamemreaddata = alu_result_to_data_mem_and_MEMWB;
             readdata2_to_datamemwritedata = reg_2_from_EXMEM_to_datamem;
             memwrite = control_Memwrite_from_EXMEM;
@@ -160,7 +160,7 @@
             .writedata(mux3_to_write_data),.readdata1(reg_out_1_to_IDEX),.readdata2(reg_out_2_to_IDEX),.reset(reset),.clk(clk),.regwrite(control_RegWrite_from_MEMWB_to_registers));
             
             //Signextend instantiation 
-            signextend extend_inst (.clk(clk), .unextended(ins_mem_31_to_0_from_IFID_to_all_things), .extended(signextend_to_IDEX));
+            signextend extend_inst (.unextended(ins_mem_31_to_0_from_IFID_to_all_things), .extended(signextend_to_IDEX));
             
             //ALU control instantiation 
             alu_control alucontrol_inst (.clk(clk), .aluop(control_ALU_op_from_IDEX), .instruction31_21(IDEX_to_ALUControl[31:21]), .alu_controlline(alu_control_to_alu));
@@ -313,7 +313,7 @@
             output reg [63:0] y,
             output reg z
             );
-                always@(readdata1, main_aluinput2)
+                always@(*)
                 begin
                     case(ALU)
                     4'b0000: assign y = readdata1 & main_aluinput2;
@@ -322,18 +322,21 @@
                     4'b0110: assign y = readdata1 - main_aluinput2;
                     4'b0111: assign y = main_aluinput2 ;
                     4'b1100: assign y = ~(readdata1 | main_aluinput2);
+                    default: assign y = 64'bxxxxxxxx;
                     endcase
                     
                 if (y == 0)
                     begin
-                     z = 1;
-                     end
-                     
-                else
-                
+                     z = 1'b1;
+                     end              
+                else //if (y != 0)
                     begin
-                     z = 0;
+                     z = 1'b0;
                     end
+//                else
+//                    begin
+//                    z = 1'bx;
+//                    end
                 end
     endmodule
     
@@ -349,7 +352,7 @@
         output reg memwrite,
         output reg branch
                     );
-                        always@(posedge clk) begin
+                        always@(opcode) begin
                         if (opcode[10:3]==8'b10110100) begin
                         alusrc=1'b0;
                         regwrite=1'b0;
@@ -432,7 +435,7 @@
         input reg2loc, //In this its instruction[28]
         output reg [4:0] readregaddr2
         );
-        always @(posedge clk) begin
+        always @(instruction20_16, instruction4_0, reg2loc) begin
                 case(reg2loc)
                     1'b0:readregaddr2=instruction20_16;
                     1'b1:readregaddr2=instruction4_0;
@@ -447,7 +450,7 @@
         input alusrc,
         output reg [63:0] main_aluinput2
         );
-            always @(posedge clk) begin
+            always @(readdata2, extended, alusrc) begin
                 case(alusrc)
                     1'b0:main_aluinput2=readdata2;
                     1'b1:main_aluinput2=extended;
@@ -462,7 +465,7 @@
         input [63:0] datamem_readdata,
         output reg [63:0] writedata
                 );
-        always @(posedge clk) begin
+        always @(*) begin
             case(memtoreg)
                 1'b1: writedata=datamem_readdata;
                 1'b0: writedata=y;
@@ -499,7 +502,7 @@
     output reg [63:0] add_out
     );
     
-     always @(posedge clk) begin
+     always @(signextend_in,pc_in) begin
         add_out = (signextend_in<<2) + pc_in;
     end
     
@@ -543,8 +546,7 @@ module registerfile (
         always@(posedge clk) begin //for read
             readdata1= regs[readregaddr1];
             readdata2= regs[readregaddr2];
-        end
-    always@(posedge clk)begin
+        
         if(regwrite == 1'b1)begin
                    regs[writeregaddr] = writedata;
             end
@@ -552,12 +554,11 @@ module registerfile (
     endmodule
     
     module signextend(
-        input clk,
         input [31:0] unextended,
         output reg [63:0] extended
                     );
                     reg signed [51:0] temp;
-            always@(posedge clk) begin
+            always@(unextended) begin
                 if (unextended[31:24]==8'b10110100) begin
                         extended [63:19]= {45{unextended[23]}};
                         extended [18:0]= unextended[23:5];
@@ -634,7 +635,7 @@ module instructionmemory(
     output reg [31:0] instruction31_0
     );
     reg [31:0] instructions[63:0];
-    always@(posedge clk) begin
+    always@(pc) begin
     //Instructions
       instructions[0]  = 32'b00000000000000000000000000000000;
       instructions[4]  = 32'b10001011000001000000000010100011; // ADD      x3, x5, x4
@@ -645,7 +646,7 @@ module instructionmemory(
       instructions[24] = 32'b11111000000000001000000101101100; // STUR    x12, [ x16, #8]
       instructions[28] = 32'b10110100000000000000000000000000; // CBZ      x0, #0
         end
-            always@(posedge clk) begin
+            always@(pc) begin
                 instruction31_0 = instructions[pc];
             end
 endmodule
