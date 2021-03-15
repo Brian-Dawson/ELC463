@@ -61,7 +61,7 @@ module testbench(
     instruction_from_testbench=instruction_from_testbench_transfer;
     
     end
-    always @ (clk) begin
+    always begin
     #1;
     clk <= ~clk;
     reset = 1'b0;
