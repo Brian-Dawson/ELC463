@@ -353,13 +353,13 @@
         output reg branch
                     );
                         always@(opcode) begin
-                        if (opcode[10:3]==8'b10110100) begin
-                        alusrc=1'b0;
-                        regwrite=1'b0;
-                        memread=1'b0;
-                        memwrite=1'b0;
-                        branch=1'b1;
-                        aluop=2'b01;
+                        if (opcode[10:3]==8'b10110100) begin //B
+                        alusrc<=1'b0;
+                        regwrite<=1'b0;
+                        memread<=1'b0;
+                        memwrite<=1'b0;
+                        branch<=1'b1;
+                        aluop<=2'b01;
                         
                         end
         
@@ -367,62 +367,62 @@
                             case(opcode)
                             
                             11'b10001011000: begin //ADD
-                            alusrc=1'b0;
-                            memtoreg=1'b0;
-                            regwrite=1'b1;
-                            memread=1'b0;
-                            memwrite=1'b0;
-                            branch=1'b0;
-                            aluop=2'b10;
+                            alusrc<=1'b0;
+                            memtoreg<=1'b0;
+                            regwrite<=1'b1;
+                            memread<=1'b0;
+                            memwrite<=1'b0;
+                            branch<=1'b0;
+                            aluop<=2'b10;
                             end
                         
                             11'b11001011000: begin //SUB
-                            alusrc=1'b0;
-                            memtoreg=1'b0;
-                            regwrite=1'b1;
-                            memread=1'b0;
-                            memwrite=1'b0;
-                            branch=1'b0;
-                            aluop=2'b10;
+                            alusrc<=1'b0;
+                            memtoreg<=1'b0;
+                            regwrite<=1'b1;
+                            memread<=1'b0;
+                            memwrite<=1'b0;
+                            branch<=1'b0;
+                            aluop<=2'b10;
                             end
                         
                             11'b10001010000: begin//AND
-                            alusrc=1'b0;
-                            memtoreg=1'b0;
-                            regwrite=1'b1;
-                            memread=1'b0;
-                            memwrite=1'b0;
-                            branch=1'b0;
-                            aluop=2'b10;
+                            alusrc<=1'b0;
+                            memtoreg<=1'b0;
+                            regwrite<=1'b1;
+                            memread<=1'b0;
+                            memwrite<=1'b0;
+                            branch<=1'b0;
+                            aluop<=2'b10;
                             end
                         
                             11'b10101010000: begin //ORR
-                            alusrc=1'b0;
-                            memtoreg=1'b0;
-                            regwrite=1'b1;
-                            memread=1'b0;
-                            memwrite=1'b0;
-                            branch=1'b0;
-                            aluop=2'b10;
+                            alusrc<=1'b0;
+                            memtoreg<=1'b0;
+                            regwrite<=1'b1;
+                            memread<=1'b0;
+                            memwrite<=1'b0;
+                            branch<=1'b0;
+                            aluop<=2'b10;
                             end
                         
                             11'b11111000010: begin //LDUR
-                            alusrc=1'b1;
-                            memtoreg=1'b1;
-                            regwrite=1'b1;
-                            memread=1'b1;
-                            memwrite=1'b0;
-                            branch=1'b0;
-                            aluop=2'b00;
+                            alusrc<=1'b1;
+                            memtoreg<=1'b1;
+                            regwrite<=1'b1;
+                            memread<=1'b1;
+                            memwrite<=1'b0;
+                            branch<=1'b0;
+                            aluop<=2'b00;
                             end
                         
                             11'b11111000000:begin //STUR
-                            alusrc=1'b1;
-                            regwrite=1'b0;
-                            memread=1'b0;
-                            memwrite=1'b1;
-                            branch=1'b0;
-                            aluop=2'b00;
+                            alusrc<=1'b1;
+                            regwrite<=1'b0;
+                            memread<=1'b0;
+                            memwrite<=1'b1;
+                            branch<=1'b0;
+                            aluop<=2'b00;
                             end
                         endcase
                     end
@@ -452,8 +452,8 @@
         );
             always @(readdata2, extended, alusrc) begin
                 case(alusrc)
-                    1'b0:main_aluinput2=readdata2;
-                    1'b1:main_aluinput2=extended;
+                    1'b0:main_aluinput2= readdata2;
+                    1'b1:main_aluinput2= extended;
                 endcase
             end
     endmodule
@@ -535,8 +535,8 @@ module registerfile (
             input [4:0] writeregaddr,
             output reg [63:0] readdata1,readdata2
                             );
-                reg [63:0] regs[31:0];//Creates the 32,64-bit registers
-                integer i;
+        reg [63:0] regs[31:0];//Creates the 32,64-bit registers
+        integer i;
         
         initial begin
             for(i=0;i<64;i=i+1) begin
@@ -595,6 +595,7 @@ module registerfile (
                         else if(instruction31_21==11'b10101010000)
                                 alu_controlline=4'b0001;
                         end
+                   default : alu_controlline = 4'bxxxx;
                 endcase
             end
     endmodule
@@ -639,9 +640,11 @@ module instructionmemory(
     //Instructions
       instructions[0]  = 32'b00000000000000000000000000000000;
       instructions[4]  = 32'b10001011000001000000000010100011; // ADD      x3, x5, x4
-      instructions[8]  = 32'b11001011000001100000000000100001; // SUB       x1, x1, x6
-      instructions[12] = 32'b10001010000001000000000001100111; // AND      x7, x3, x4
+      instructions[8]  = 32'b11001011000001100000000000100001; // SUB      x1, x1, x6
+     // instructions[12] = 32'b10001010000001000000000001100111; // AND      x7, x3, x4
+      instructions[12] = 32'b10001010000010100000001111000110; // AND       x6, x30, x10
       instructions[16] = 32'b10101010000001100000000010101000; // ORR      x8, x5, x6
+      //instructions[16] = 32'b10101010000010100000001111000101; // ORR      x5, x30, x10
       instructions[20] = 32'b11111000010000000100000100001010; // LDUR   x10, [x8, #4]
       instructions[24] = 32'b11111000000000001000000101101100; // STUR    x12, [ x16, #8]
       instructions[28] = 32'b10110100000000000000000000000000; // CBZ      x0, #0
