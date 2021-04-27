@@ -48,7 +48,7 @@ module testbench(
     
     datamemory datamem_inst
     (.clk(clk), .main_aluresult(mainalu_to_datamemreaddata_transfer),.datamem_writedata(readdata2_to_datamemwritedata_transfer),.memwrite(memwrite_transfer),.memread(memread_transfer),.datamem_readdata(datamemreaddata_to_mux3_transfer));
-    always@(posedge clk)begin
+    always@(*)begin
     datamemreaddata_to_mux3 = datamemreaddata_to_mux3_transfer;
     end
     always@(*)begin

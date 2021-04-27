@@ -3,5 +3,5 @@
 May 27 2020
 20:09:33
 D:/Verilogprojects/ELC463/lab3/lab3.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
-D:/Verilogprojects/ELC463/lab3/lab3.srcs/sim_1/new/testbench.v,1615920255,verilog,,,,testbench,,,,,,,,
-D:/Verilogprojects/ELC463/lab3/lab3.srcs/sources_1/new/hazard_forward.v,1616515126,verilog,,D:/Verilogprojects/ELC463/lab3/lab3.srcs/sim_1/new/testbench.v,,Alu;CPU;Control;ControlMux;EXMEM;ForwardALUMux;ForwardingUnit;Hazard;IDEX;IFID;MEMWB;add;alu_control;datamemory;instructionmemory;mux1;mux2;mux3;mux4;pc;registerfile;signextend,,,,,,,,
+D:/Verilogprojects/ELC463/lab3/lab3.srcs/sim_1/new/testbench.v,1616770929,verilog,,,,testbench,,,,,,,,
+D:/Verilogprojects/ELC463/lab3/lab3.srcs/sources_1/new/hazard_forward.v,1617044008,verilog,,D:/Verilogprojects/ELC463/lab3/lab3.srcs/sim_1/new/testbench.v,,Alu;CPU;Control;ControlMux;EXMEM;ForwardALUMux;ForwardingUnit;Hazard;IDEX;IFID;MEMWB;add;alu_control;datamemory;instructionmemory;mux1;mux2;mux3;mux4;pc;registerfile;signextend,,,,,,,,

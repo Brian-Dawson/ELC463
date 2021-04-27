@@ -176,7 +176,7 @@
             (.clk(clk), .reset(reset), .pc_output(pc_from_pc_to_IFID),.extended(add_from_EXMEM_to_mux4),.cbz(PCSrc),.pc(mux4_to_pcinput));
            
            //Program counter instantiation 
-            always@(posedge clk)begin
+            always@(*)begin
             pcoutput_to_testbench=mux4_to_pcinput;
             end
             
@@ -865,19 +865,21 @@ module instructionmemory(
     output reg [31:0] instruction31_0
     );
     reg [31:0] instructions[63:0];
-    always@(pc) begin
+    initial begin
     //Instructions
       instructions[0]  = 32'b00000000000000000000000000000000;
       instructions[4]  = 32'b10001011000001000000000010100011; // ADD      x3, x5, x4
-      instructions[8]  = 32'b10001011000001010000000001101001; // ADD      x9, x3, x2 Look at this again
+      instructions[8]  = 32'b10001011000000110000000001001001; // ADD      x9, x3, x2 
       instructions[12] = 32'b11001011000001100000000000100001; // SUB      x1, x1, x6
-      instructions[16] = 32'b10001010000010100000001111000110; // AND      x6, x30, x10
-      instructions[20] = 32'b11001011000001110000000011001110; // SUB      x14, x6, x7
-      instructions[24] = 32'b10101010000001100000000010101000; // ORR      x8, x5, x6
-      instructions[28] = 32'b11111000010000000100000100001010; // LDUR     x10, [x8, #4]
-      instructions[32] = 32'b10001010000000010000000101001111; // AND      x15, x10, x1
-      instructions[36] = 32'b11111000000000001000000101101100; // STUR     x12, [ x11, #8]
-      instructions[40] = 32'b10110100000000000000000000000000; // CBZ      x0, #0
+      instructions[16] = 32'b11111000010000000110001001011110; // LDUR     x30, [x18, #6]
+      instructions[20] = 32'b10001010000010100000001111000110; // AND      x6, x30, x10
+      instructions[24] = 32'b11001011000001110000000011001110; // SUB      x14, x6, x7
+      instructions[28] = 32'b10101010000001100000000010101000; // ORR      x8, x5, x6
+      instructions[32] = 32'b11111000010000000100000100001010; // LDUR     x10, [x8, #4]
+      instructions[36] = 32'b10001010000000010000000101001111; // AND      x15, x10, x1
+      instructions[40] = 32'b11111000000000001000000101101100; // STUR     x12, [ x11, #8]
+      instructions[44] = 32'b11001011000001100000000101101011; // SUB      x11, x11, x6
+      instructions[48] = 32'b10110100000000000000000000000000; // CBZ      x0, #0
       
         end
             always@(pc) begin

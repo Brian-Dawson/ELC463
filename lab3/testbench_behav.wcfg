@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="6666fs"></ZoomStartTime>
-      <ZoomEndTime time="46667fs"></ZoomEndTime>
-      <Cursor1Time time="40000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="40001fs"></ZoomEndTime>
+      <Cursor1Time time="33000fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="206"></NameColumnWidth>
-      <ValueColumnWidth column_width="100"></ValueColumnWidth>
+      <NameColumnWidth column_width="255"></NameColumnWidth>
+      <ValueColumnWidth column_width="86"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="13" />
+   <WVObjectSize size="29" />
    <wvobject fp_name="/testbench/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -28,6 +28,95 @@
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
+   <wvobject fp_name="/testbench/Instrucmem_inst/pc" type="array">
+      <obj_property name="ElementShortName">pc[63:0]</obj_property>
+      <obj_property name="ObjectShortName">pc[63:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/Instrucmem_inst/instruction31_0" type="array">
+      <obj_property name="ElementShortName">instruction31_0[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction31_0[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#00FFFF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/CPU_Inst/reg_inst/readregaddr1" type="array">
+      <obj_property name="ElementShortName">readregaddr1[4:0]</obj_property>
+      <obj_property name="ObjectShortName">readregaddr1[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/CPU_Inst/reg_inst/readregaddr2" type="array">
+      <obj_property name="ElementShortName">readregaddr2[4:0]</obj_property>
+      <obj_property name="ObjectShortName">readregaddr2[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#00FF7F</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/CPU_Inst/alu_inst/readdata1" type="array">
+      <obj_property name="ElementShortName">readdata1[63:0]</obj_property>
+      <obj_property name="ObjectShortName">readdata1[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/CPU_Inst/alu_inst/main_aluinput2" type="array">
+      <obj_property name="ElementShortName">main_aluinput2[63:0]</obj_property>
+      <obj_property name="ObjectShortName">main_aluinput2[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/CPU_Inst/alu_inst/y" type="array">
+      <obj_property name="ElementShortName">y[63:0]</obj_property>
+      <obj_property name="ObjectShortName">y[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFA500</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/datamem_inst/main_aluresult" type="array">
+      <obj_property name="ElementShortName">main_aluresult[63:0]</obj_property>
+      <obj_property name="ObjectShortName">main_aluresult[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/datamem_inst/datamem_writedata" type="array">
+      <obj_property name="ElementShortName">datamem_writedata[63:0]</obj_property>
+      <obj_property name="ObjectShortName">datamem_writedata[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/CPU_Inst/reg_inst/writeregaddr" type="array">
+      <obj_property name="ElementShortName">writeregaddr[4:0]</obj_property>
+      <obj_property name="ObjectShortName">writeregaddr[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/CPU_Inst/reg_inst/writedata" type="array">
+      <obj_property name="ElementShortName">writedata[63:0]</obj_property>
+      <obj_property name="ObjectShortName">writedata[63:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject fp_name="group119" type="group">
+      <obj_property name="label">Program Counter</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/CPU_Inst/pc_inst/pc_input" type="array">
+         <obj_property name="ElementShortName">pc_input[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_input[63:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/pc_inst/hazard" type="logic">
+         <obj_property name="ElementShortName">hazard</obj_property>
+         <obj_property name="ObjectShortName">hazard</obj_property>
+      </wvobject>
+   </wvobject>
    <wvobject fp_name="group82" type="group">
       <obj_property name="label">Instruction Memory</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -35,37 +124,181 @@
          <obj_property name="ElementShortName">instruction_from_testbench[31:0]</obj_property>
          <obj_property name="ObjectShortName">instruction_from_testbench[31:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/Instrucmem_inst/clk" type="logic">
+   </wvobject>
+   <wvobject fp_name="group125" type="group">
+      <obj_property name="label">IFID</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/instruction31_0_in" type="array">
+         <obj_property name="ElementShortName">instruction31_0_in[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction31_0_in[31:0]</obj_property>
+         <obj_property name="CustomSignalColor">#00FF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/pc_in" type="array">
+         <obj_property name="ElementShortName">pc_in[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_in[63:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/Hazard_in" type="logic">
+         <obj_property name="ElementShortName">Hazard_in</obj_property>
+         <obj_property name="ObjectShortName">Hazard_in</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/instruction31_0_out" type="array">
+         <obj_property name="ElementShortName">instruction31_0_out[31:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction31_0_out[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/pc_out" type="array">
+         <obj_property name="ElementShortName">pc_out[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_out[63:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group377" type="group">
+      <obj_property name="label">IDEX</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/CPU_Inst/IDEX_inst/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/Instrucmem_inst/pc" type="array">
-         <obj_property name="ElementShortName">pc[63:0]</obj_property>
-         <obj_property name="ObjectShortName">pc[63:0]</obj_property>
+      <wvobject fp_name="/testbench/CPU_Inst/IDEX_inst/pc_in" type="array">
+         <obj_property name="ElementShortName">pc_in[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_in[63:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/Instrucmem_inst/instruction31_0" type="array">
-         <obj_property name="ElementShortName">instruction31_0[31:0]</obj_property>
-         <obj_property name="ObjectShortName">instruction31_0[31:0]</obj_property>
+      <wvobject fp_name="/testbench/CPU_Inst/IDEX_inst/read_data_1_in" type="array">
+         <obj_property name="ElementShortName">read_data_1_in[63:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data_1_in[63:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/Instrucmem_inst/instructions" type="array">
-         <obj_property name="ElementShortName">instructions[63:0][31:0]</obj_property>
-         <obj_property name="ObjectShortName">instructions[63:0][31:0]</obj_property>
+      <wvobject fp_name="/testbench/CPU_Inst/IDEX_inst/read_data_2_in" type="array">
+         <obj_property name="ElementShortName">read_data_2_in[63:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data_2_in[63:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/IDEX_inst/forwardRN_in" type="array">
+         <obj_property name="ElementShortName">forwardRN_in[4:0]</obj_property>
+         <obj_property name="ObjectShortName">forwardRN_in[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/IDEX_inst/forwardRM_in" type="array">
+         <obj_property name="ElementShortName">forwardRM_in[4:0]</obj_property>
+         <obj_property name="ObjectShortName">forwardRM_in[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/IDEX_inst/pc_out" type="array">
+         <obj_property name="ElementShortName">pc_out[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc_out[63:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/IDEX_inst/forwardRN_out" type="array">
+         <obj_property name="ElementShortName">forwardRN_out[4:0]</obj_property>
+         <obj_property name="ObjectShortName">forwardRN_out[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/IDEX_inst/forwardRM_out" type="array">
+         <obj_property name="ElementShortName">forwardRM_out[4:0]</obj_property>
+         <obj_property name="ObjectShortName">forwardRM_out[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group378" type="group">
+      <obj_property name="label">EXMEM</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/CPU_Inst/EXMEM_inst/add_result_in" type="array">
+         <obj_property name="ElementShortName">add_result_in[63:0]</obj_property>
+         <obj_property name="ObjectShortName">add_result_in[63:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/EXMEM_inst/read_data_2_in" type="array">
+         <obj_property name="ElementShortName">read_data_2_in[63:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data_2_in[63:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/EXMEM_inst/instruction_4_to_0_in" type="array">
+         <obj_property name="ElementShortName">instruction_4_to_0_in[4:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction_4_to_0_in[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/EXMEM_inst/ALU_result_in" type="array">
+         <obj_property name="ElementShortName">ALU_result_in[63:0]</obj_property>
+         <obj_property name="ObjectShortName">ALU_result_in[63:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/EXMEM_inst/add_result_out" type="array">
+         <obj_property name="ElementShortName">add_result_out[63:0]</obj_property>
+         <obj_property name="ObjectShortName">add_result_out[63:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/EXMEM_inst/read_data_2_out" type="array">
+         <obj_property name="ElementShortName">read_data_2_out[63:0]</obj_property>
+         <obj_property name="ObjectShortName">read_data_2_out[63:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/EXMEM_inst/instruction_4_to_0_out" type="array">
+         <obj_property name="ElementShortName">instruction_4_to_0_out[4:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction_4_to_0_out[4:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/EXMEM_inst/ALU_result_out" type="array">
+         <obj_property name="ElementShortName">ALU_result_out[63:0]</obj_property>
+         <obj_property name="ObjectShortName">ALU_result_out[63:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group379" type="group">
+      <obj_property name="label">MEMWB</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/testbench/CPU_Inst/MEMWB_inst/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/MEMWB_inst/RegWrite_in" type="logic">
+         <obj_property name="ElementShortName">RegWrite_in</obj_property>
+         <obj_property name="ObjectShortName">RegWrite_in</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/MEMWB_inst/MemToReg_in" type="logic">
+         <obj_property name="ElementShortName">MemToReg_in</obj_property>
+         <obj_property name="ObjectShortName">MemToReg_in</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/MEMWB_inst/data_memory_in" type="array">
+         <obj_property name="ElementShortName">data_memory_in[63:0]</obj_property>
+         <obj_property name="ObjectShortName">data_memory_in[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/MEMWB_inst/alu_result_in" type="array">
+         <obj_property name="ElementShortName">alu_result_in[63:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_result_in[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/MEMWB_inst/instruction_4_to_0_in" type="array">
+         <obj_property name="ElementShortName">instruction_4_to_0_in[4:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction_4_to_0_in[4:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/MEMWB_inst/RegWrite_out" type="logic">
+         <obj_property name="ElementShortName">RegWrite_out</obj_property>
+         <obj_property name="ObjectShortName">RegWrite_out</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/MEMWB_inst/MemToReg_out" type="logic">
+         <obj_property name="ElementShortName">MemToReg_out</obj_property>
+         <obj_property name="ObjectShortName">MemToReg_out</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/MEMWB_inst/data_memory_out" type="array">
+         <obj_property name="ElementShortName">data_memory_out[63:0]</obj_property>
+         <obj_property name="ObjectShortName">data_memory_out[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/MEMWB_inst/alu_result_out" type="array">
+         <obj_property name="ElementShortName">alu_result_out[63:0]</obj_property>
+         <obj_property name="ObjectShortName">alu_result_out[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/MEMWB_inst/instruction_4_to_0_out" type="array">
+         <obj_property name="ElementShortName">instruction_4_to_0_out[4:0]</obj_property>
+         <obj_property name="ObjectShortName">instruction_4_to_0_out[4:0]</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group87" type="group">
       <obj_property name="label">Data Memory</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/testbench/datamem_inst/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
-      </wvobject>
-      <wvobject fp_name="/testbench/datamem_inst/main_aluresult" type="array">
-         <obj_property name="ElementShortName">main_aluresult[63:0]</obj_property>
-         <obj_property name="ObjectShortName">main_aluresult[63:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/testbench/datamem_inst/datamem_writedata" type="array">
-         <obj_property name="ElementShortName">datamem_writedata[63:0]</obj_property>
-         <obj_property name="ObjectShortName">datamem_writedata[63:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/datamem_inst/memwrite" type="logic">
          <obj_property name="ElementShortName">memwrite</obj_property>
@@ -94,70 +327,104 @@
       <wvobject fp_name="/testbench/CPU_Inst/ForwardingUnit_inst/EXRN_in" type="array">
          <obj_property name="ElementShortName">EXRN_in[4:0]</obj_property>
          <obj_property name="ObjectShortName">EXRN_in[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/ForwardingUnit_inst/EXRM_in" type="array">
          <obj_property name="ElementShortName">EXRM_in[4:0]</obj_property>
          <obj_property name="ObjectShortName">EXRM_in[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/ForwardingUnit_inst/MEMRD_in" type="array">
          <obj_property name="ElementShortName">MEMRD_in[4:0]</obj_property>
          <obj_property name="ObjectShortName">MEMRD_in[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/ForwardingUnit_inst/WBRD_in" type="array">
          <obj_property name="ElementShortName">WBRD_in[4:0]</obj_property>
          <obj_property name="ObjectShortName">WBRD_in[4:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/ForwardingUnit_inst/MEM_regwrite_in" type="logic">
          <obj_property name="ElementShortName">MEM_regwrite_in</obj_property>
          <obj_property name="ObjectShortName">MEM_regwrite_in</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/ForwardingUnit_inst/WB_regwrite_in" type="logic">
          <obj_property name="ElementShortName">WB_regwrite_in</obj_property>
          <obj_property name="ObjectShortName">WB_regwrite_in</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/ForwardingUnit_inst/ForwardA" type="array">
          <obj_property name="ElementShortName">ForwardA[1:0]</obj_property>
          <obj_property name="ObjectShortName">ForwardA[1:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/ForwardingUnit_inst/ForwardB" type="array">
          <obj_property name="ElementShortName">ForwardB[1:0]</obj_property>
          <obj_property name="ObjectShortName">ForwardB[1:0]</obj_property>
+         <obj_property name="Radix">BINARYRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group97" type="group">
       <obj_property name="label">Hazard</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/testbench/CPU_Inst/Hazard_inst/EXMEMREAD_in" type="logic">
          <obj_property name="ElementShortName">EXMEMREAD_in</obj_property>
          <obj_property name="ObjectShortName">EXMEMREAD_in</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/Hazard_inst/EXRD_in" type="array">
          <obj_property name="ElementShortName">EXRD_in[4:0]</obj_property>
          <obj_property name="ObjectShortName">EXRD_in[4:0]</obj_property>
-         <obj_property name="isExpanded"></obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/Hazard_inst/ID_PC_in" type="array">
          <obj_property name="ElementShortName">ID_PC_in[63:0]</obj_property>
          <obj_property name="ObjectShortName">ID_PC_in[63:0]</obj_property>
          <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/Hazard_inst/ID_INS_in" type="array">
          <obj_property name="ElementShortName">ID_INS_in[31:0]</obj_property>
          <obj_property name="ObjectShortName">ID_INS_in[31:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+         <obj_property name="Radix">HEXRADIX</obj_property>
+         <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/Hazard_inst/IFID_write_out" type="logic">
          <obj_property name="ElementShortName">IFID_write_out</obj_property>
          <obj_property name="ObjectShortName">IFID_write_out</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/Hazard_inst/PC_write_out" type="logic">
          <obj_property name="ElementShortName">PC_write_out</obj_property>
          <obj_property name="ObjectShortName">PC_write_out</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/Hazard_inst/CONTROLMUX_out" type="logic">
          <obj_property name="ElementShortName">CONTROLMUX_out</obj_property>
          <obj_property name="ObjectShortName">CONTROLMUX_out</obj_property>
+         <obj_property name="CustomSignalColor">#FFFF00</obj_property>
+         <obj_property name="UseCustomSignalColor">true</obj_property>
       </wvobject>
    </wvobject>
    <wvobject fp_name="group98" type="group">
@@ -275,27 +542,14 @@
    <wvobject fp_name="group63" type="group">
       <obj_property name="label">ALU</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/testbench/CPU_Inst/alu_inst/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/alu_inst/readdata1" type="array">
-         <obj_property name="ElementShortName">readdata1[63:0]</obj_property>
-         <obj_property name="ObjectShortName">readdata1[63:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/alu_inst/main_aluinput2" type="array">
-         <obj_property name="ElementShortName">main_aluinput2[63:0]</obj_property>
-         <obj_property name="ObjectShortName">main_aluinput2[63:0]</obj_property>
-         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
-      </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/alu_inst/ALU" type="array">
          <obj_property name="ElementShortName">ALU[3:0]</obj_property>
          <obj_property name="ObjectShortName">ALU[3:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/alu_inst/y" type="array">
-         <obj_property name="ElementShortName">y[63:0]</obj_property>
-         <obj_property name="ObjectShortName">y[63:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/alu_inst/z" type="logic">
          <obj_property name="ElementShortName">z</obj_property>
@@ -305,6 +559,7 @@
    <wvobject fp_name="group107" type="group">
       <obj_property name="label">Registers</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/testbench/CPU_Inst/reg_inst/reset" type="logic">
          <obj_property name="ElementShortName">reset</obj_property>
          <obj_property name="ObjectShortName">reset</obj_property>
@@ -317,31 +572,15 @@
          <obj_property name="ElementShortName">regwrite</obj_property>
          <obj_property name="ObjectShortName">regwrite</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/reg_inst/readregaddr1" type="array">
-         <obj_property name="ElementShortName">readregaddr1[4:0]</obj_property>
-         <obj_property name="ObjectShortName">readregaddr1[4:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/reg_inst/readregaddr2" type="array">
-         <obj_property name="ElementShortName">readregaddr2[4:0]</obj_property>
-         <obj_property name="ObjectShortName">readregaddr2[4:0]</obj_property>
-         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
-      </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/reg_inst/writedata" type="array">
-         <obj_property name="ElementShortName">writedata[63:0]</obj_property>
-         <obj_property name="ObjectShortName">writedata[63:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/reg_inst/writeregaddr" type="array">
-         <obj_property name="ElementShortName">writeregaddr[4:0]</obj_property>
-         <obj_property name="ObjectShortName">writeregaddr[4:0]</obj_property>
-      </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/reg_inst/readdata1" type="array">
          <obj_property name="ElementShortName">readdata1[63:0]</obj_property>
          <obj_property name="ObjectShortName">readdata1[63:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/reg_inst/readdata2" type="array">
          <obj_property name="ElementShortName">readdata2[63:0]</obj_property>
          <obj_property name="ObjectShortName">readdata2[63:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject fp_name="/testbench/CPU_Inst/reg_inst/regs" type="array">
          <obj_property name="ElementShortName">regs[31:0][63:0]</obj_property>
@@ -352,56 +591,74 @@
          <obj_property name="ObjectShortName">i[31:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group119" type="group">
-      <obj_property name="label">Program Counter</obj_property>
+   <wvobject fp_name="group534" type="group">
+      <obj_property name="label">mux4</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/testbench/CPU_Inst/pc_inst/clk" type="logic">
+      <wvobject fp_name="/testbench/CPU_Inst/mux4_inst/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/pc_inst/reset" type="logic">
+      <wvobject fp_name="/testbench/CPU_Inst/mux4_inst/reset" type="logic">
          <obj_property name="ElementShortName">reset</obj_property>
          <obj_property name="ObjectShortName">reset</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/pc_inst/pc_input" type="array">
-         <obj_property name="ElementShortName">pc_input[63:0]</obj_property>
-         <obj_property name="ObjectShortName">pc_input[63:0]</obj_property>
+      <wvobject fp_name="/testbench/CPU_Inst/mux4_inst/cbz" type="logic">
+         <obj_property name="ElementShortName">cbz</obj_property>
+         <obj_property name="ObjectShortName">cbz</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/pc_inst/hazard" type="logic">
-         <obj_property name="ElementShortName">hazard</obj_property>
-         <obj_property name="ObjectShortName">hazard</obj_property>
-      </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/pc_inst/pc_output" type="array">
+      <wvobject fp_name="/testbench/CPU_Inst/mux4_inst/pc_output" type="array">
          <obj_property name="ElementShortName">pc_output[63:0]</obj_property>
          <obj_property name="ObjectShortName">pc_output[63:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/mux4_inst/extended" type="array">
+         <obj_property name="ElementShortName">extended[63:0]</obj_property>
+         <obj_property name="ObjectShortName">extended[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/CPU_Inst/mux4_inst/pc" type="array">
+         <obj_property name="ElementShortName">pc[63:0]</obj_property>
+         <obj_property name="ObjectShortName">pc[63:0]</obj_property>
+         <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group125" type="group">
-      <obj_property name="label">IFID</obj_property>
+   <wvobject fp_name="group894" type="group">
+      <obj_property name="label">Datamem2</obj_property>
       <obj_property name="DisplayName">label</obj_property>
-      <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/clk" type="logic">
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/testbench/datamem_inst/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/instruction31_0_in" type="array">
-         <obj_property name="ElementShortName">instruction31_0_in[31:0]</obj_property>
-         <obj_property name="ObjectShortName">instruction31_0_in[31:0]</obj_property>
+      <wvobject fp_name="/testbench/datamem_inst/main_aluresult" type="array">
+         <obj_property name="ElementShortName">main_aluresult[63:0]</obj_property>
+         <obj_property name="ObjectShortName">main_aluresult[63:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/pc_in" type="array">
-         <obj_property name="ElementShortName">pc_in[63:0]</obj_property>
-         <obj_property name="ObjectShortName">pc_in[63:0]</obj_property>
+      <wvobject fp_name="/testbench/datamem_inst/datamem_writedata" type="array">
+         <obj_property name="ElementShortName">datamem_writedata[63:0]</obj_property>
+         <obj_property name="ObjectShortName">datamem_writedata[63:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/Hazard_in" type="logic">
-         <obj_property name="ElementShortName">Hazard_in</obj_property>
-         <obj_property name="ObjectShortName">Hazard_in</obj_property>
+      <wvobject fp_name="/testbench/datamem_inst/memwrite" type="logic">
+         <obj_property name="ElementShortName">memwrite</obj_property>
+         <obj_property name="ObjectShortName">memwrite</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/instruction31_0_out" type="array">
-         <obj_property name="ElementShortName">instruction31_0_out[31:0]</obj_property>
-         <obj_property name="ObjectShortName">instruction31_0_out[31:0]</obj_property>
+      <wvobject fp_name="/testbench/datamem_inst/memread" type="logic">
+         <obj_property name="ElementShortName">memread</obj_property>
+         <obj_property name="ObjectShortName">memread</obj_property>
       </wvobject>
-      <wvobject fp_name="/testbench/CPU_Inst/IFID_inst/pc_out" type="array">
-         <obj_property name="ElementShortName">pc_out[63:0]</obj_property>
-         <obj_property name="ObjectShortName">pc_out[63:0]</obj_property>
+      <wvobject fp_name="/testbench/datamem_inst/datamem_readdata" type="array">
+         <obj_property name="ElementShortName">datamem_readdata[63:0]</obj_property>
+         <obj_property name="ObjectShortName">datamem_readdata[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/datamem_inst/i" type="array">
+         <obj_property name="ElementShortName">i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/testbench/datamem_inst/storage" type="array">
+         <obj_property name="ElementShortName">storage[31:0][63:0]</obj_property>
+         <obj_property name="ObjectShortName">storage[31:0][63:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
       </wvobject>
    </wvobject>
 </wave_config>
