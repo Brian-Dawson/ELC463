@@ -3,5 +3,5 @@
 May 27 2020
 20:09:33
 D:/Verilogprojects/ELC463/lab4.sim/sim_1/behav/xsim/glbl.v,1590624368,verilog,,,,glbl,,,,,,,,
-D:/Verilogprojects/ELC463/lab4.srcs/sim_1/new/testbench.sv,1619543185,systemVerilog,,,,testbench,,,,,,,,
-D:/Verilogprojects/ELC463/lab4.srcs/sources_1/new/cache_sim.v,1619470078,systemVerilog,D:/Verilogprojects/ELC463/lab4.srcs/sim_1/new/testbench.sv,D:/Verilogprojects/ELC463/lab4.srcs/sim_1/new/testbench.sv,,$unit_cache_sim_v;cache_main,,,,,,,,
+D:/Verilogprojects/ELC463/lab4.srcs/sim_1/new/testbench.sv,1619638586,systemVerilog,,,,testbench,,,,,,,,
+D:/Verilogprojects/ELC463/lab4.srcs/sources_1/new/cache_sim.v,1619640403,systemVerilog,D:/Verilogprojects/ELC463/lab4.srcs/sim_1/new/testbench.sv,D:/Verilogprojects/ELC463/lab4.srcs/sim_1/new/testbench.sv,,$unit_cache_sim_v;cache_main,,,,,,,,
