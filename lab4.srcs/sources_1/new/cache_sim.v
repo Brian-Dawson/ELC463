@@ -56,14 +56,12 @@ input [23:0] file1 [57961:0],
 input [23:0] file2 [58596:0],
 input trace1,
 input trace2,
-output reg [15:0] pass_1,
-output reg [15:0] pass_2
+output reg [31:0] pass_1,
+output reg [31:0] pass_2
     );
     reg [23:0] data_1 [57961:0];
     reg [23:0] data_2 [58596:0];
-    reg [23:0] reordered_data_1 [57961:0];
-    reg [23:0] reordered_data_2 [58596:0];
-    reg [23:0] cache[127:0][1:0];
+    reg [23:0] cache[128:0][1:0];
     
     reg temp_data;
     reg [7:0] data1_temp;
@@ -75,12 +73,18 @@ output reg [15:0] pass_2
     integer a = 0;
     integer b = 0;
     integer k_inner = 0;
-    reg [7:0] set_cntr = 1;
+    reg [7:0] set_cntr = 0;
     integer hit_flag = 0;
-    integer test_cntr = 0;
+    
+    integer top_cntr = 0;
+    integer test_cntr1 = 0;
+    integer test_cntr2 = 0;
+    integer test_cntr3 = 0;
+    reg test_reg = 0;
+    
     integer inter_set_cntr;
-    reg [15:0] internal_1 = 0; //MISS
-    reg [15:0] internal_2 = 0; //HIT
+    reg [31:0] internal_1 = 0; //MISS
+    reg [31:0] internal_2 = 0; //HIT
     
     always@(*)begin
     for(int q = 0; q < (57962); q = q + 1)
@@ -94,14 +98,9 @@ output reg [15:0] pass_2
     end
  
 
-    always @(*) begin
+    always @(reset) begin
 //    for(a = 0; a < 57962; a = a + 1)
 //    begin
-//   // reordered_data_1[a][23:0] = data_1[a][23:0];
-//   // reordered_data_1[a][23:0] = data_1[temp][23:0];
-//   // reordered_data_1[a][23:0] = data_1[a][23:0];
-   
-//   // temp_data = data_1[a];
    
 //    data1_temp = data_1[a][23:16];
 //    data_1[a][23:16] = data_1[a][7:0];
@@ -110,7 +109,7 @@ output reg [15:0] pass_2
     
 //    end
 
-    for(i = 0; i < 128; i = i + 1) //pre-populating cache with 0s
+    for(i = 0; i < 129; i = i + 1) //pre-populating cache with 0s
     begin
         for(h = 0; h < 2; h = h + 1)
         begin
@@ -119,68 +118,71 @@ output reg [15:0] pass_2
     
     end
     
-    for(i = 0; i < 57962; i = i + 1)
+    for(i = 0; i < 28981; i = i + 1)
         begin
-            for(h = 0; h < K - 1; h = h + 1)
+            for(h = 0; h < 2; h = h + 1)
                 begin
-                    if(cache[0][h] == data_1[i][21:20])
+                top_cntr +=1;
+                    if(cache[0][h][20] == data_1[i][20]) //if idx of trace data == index of cache
                         begin
-                            k_inner = 1;
+                            
+                            //k_inner = 1;
                             hit_flag = 0;
-                            for(j = 0; j < N-1; j = j + 1)
+                            for(j = 0; j < N; j = j + 1)//setting hit flag
                                 begin
-                                    if(cache[j][h] == data_1[i][20:0])
+                                    if(cache[j][h][20:0] == data_1[i][20:0])
                                         begin
                                             hit_flag = 1;
-                                            test_cntr += 1;
                                         end
                                 end
-                            if(cache[set_cntr][h] == 0)
+                            if(cache[set_cntr][h] == 0) //if space is empty
                                 begin
-                                    cache[set_cntr][h] = data_1[i][20:0];
+                                    test_cntr1 += 1;
+                                    cache[set_cntr][h][20:0] = data_1[i][20:0]; //fill empty space with tag
                                     internal_1 += 1; //miss 
                                     //set_cntr = set_counter(h, N, (data_1)); 
-                                    set_cntr = cache[N-1][h]; 
-                                        if(set_cntr == N)
+                                    set_cntr = cache[N][h]; 
+                                        if(set_cntr == N-1)
                                             begin
-                                                set_cntr = 1;
+                                                set_cntr = 0;
                                             end
                                         else
                                             begin
                                                 set_cntr += 1;
                                             end
                                     
-                                    cache[N+1][h] = set_cntr;
+                                    cache[N][h] = set_cntr;
                                 end
-                             else if((cache[set_cntr][h] != 0) && (hit_flag == 1))
+                             else if((cache[set_cntr][h] != 0) && (hit_flag == 1))//not empty and tag is same
                                 begin
+                                    test_cntr2 += 1;
                                     internal_2 += 1; //hit
-                                   // test_cntr += 1;
-                                    set_cntr = cache[N-1][h];
+                                    set_cntr = cache[N][h];
                                         if(set_cntr == N-1)
                                             begin
-                                                set_cntr = 1;
+                                                set_cntr = 0;
                                             end
                                         else
                                             begin
                                                 set_cntr += 1;
                                             end
-                                    cache[N-1][h] = set_cntr;
+                                    cache[N][h] = set_cntr;
                                 end
-                             else
+                             else //not empty and not same tag
                                 begin
-                                    cache[set_cntr][h] = data_1[i][20:0];
+                                    test_cntr3 += 1;
+                                    cache[set_cntr][h][20:0] = data_1[i][20:0];
                                     internal_1 += 1; //miss
-                                    set_cntr = cache[N-1][h];
+                                    set_cntr = cache[N][h];
                                         if(set_cntr == N-1)
                                             begin
-                                                set_cntr = 1;
+                                                set_cntr = 0;
                                             end
                                         else
                                             begin
                                                 set_cntr += 1;
                                             end
-                                    cache[N-1][h] = set_cntr;
+                                    cache[N][h] = set_cntr;
                                 end   
                         end 
                 end

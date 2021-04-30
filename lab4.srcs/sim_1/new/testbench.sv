@@ -13,10 +13,10 @@ module testbench(
     reg [7:0] N;
     reg trace1;
     reg trace2;
-    wire [15:0] pass_1;
-    wire [15:0] pass_2;
-    reg [15:0] HIT;
-    reg [15:0] MISS;
+    wire [31:0] pass_1;
+    wire [31:0] pass_2;
+    reg [31:0] HIT;
+    reg [31:0] MISS;
     reg [23:0] array_inputs1 [57961:0];
     reg [23:0] array_inputs2 [58596:0];
     
@@ -94,8 +94,8 @@ end
                 captured_inputs1 = ($fgetc(file_inputs1)) | ($fgetc(file_inputs1) << 8) | ($fgetc(file_inputs1) << 16);
                 //scan_inputs1_num =  $fgets(captured_inputs1, file_inputs1);
                 //$display("captured input: %d file_input: %d", captured_inputs1, file_inputs1);
-                r = r + 1;
                 array_inputs1[r] = captured_inputs1;
+                r = r + 1;
                 //$display("Input: 0x%0h", captured_inputs1);
             end  
             //$display("Number of references: 0x%0h", r);
@@ -109,8 +109,8 @@ end
                  captured_inputs2 = ($fgetc(file_inputs2)) | ($fgetc(file_inputs2) << 8) | ($fgetc(file_inputs2) << 16);
                  //scan_inputs2_num = $fgets(captured_inputs2, file_inputs2);
                  //$display("captured input: %d file_input: %d", captured_inputs2, file_inputs2);
-                 y = y + 1;
                  array_inputs2[y] = captured_inputs2;
+                 y = y + 1;
                  //$display("0x%0h", captured_inputs2);
             end
             //$display("0x%0h", y);
