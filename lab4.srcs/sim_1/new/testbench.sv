@@ -8,17 +8,17 @@ module testbench(
     
     reg clk;
     reg reset;
-    reg [6:0] KN;
-    reg [6:0] K;
-reg [6:0] N;
-reg trace1;
-reg trace2;
-wire [6:0] pass_1;
-wire [6:0] pass_2;
-reg [6:0] HIT;
-reg [6:0] MISS;
-reg [23:0] array_inputs1 [57961:0];
-reg [23:0] array_inputs2 [58596:0];
+    reg [8:0] KN;
+    reg [7:0] K;
+    reg [7:0] N;
+    reg trace1;
+    reg trace2;
+    wire [15:0] pass_1;
+    wire [15:0] pass_2;
+    reg [15:0] HIT;
+    reg [15:0] MISS;
+    reg [23:0] array_inputs1 [57961:0];
+    reg [23:0] array_inputs2 [58596:0];
     
     cache_main cache_main(
     .clk(clk),
@@ -40,7 +40,7 @@ reg [23:0] array_inputs2 [58596:0];
         KN = 256;
         K = 2;
         N = 128;
-        trace1 = 1;
+        trace1 = 0;
     end
     
     always @(*)
@@ -117,11 +117,12 @@ end
                 $fclose(file_inputs2);
     end
     
-     always begin
+    always begin
         #1;
         clk <= ~clk;
         reset = 1'b0;
     end
+    
 
 endmodule
 
