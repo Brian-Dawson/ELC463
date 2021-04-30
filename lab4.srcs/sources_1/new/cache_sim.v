@@ -63,6 +63,8 @@ output reg [15:0] pass_2
     reg [23:0] data_2 [58596:0];
     reg [23:0] reordered_data_1 [57961:0];
     reg [23:0] reordered_data_2 [58596:0];
+    reg [23:0] cache[127:0][1:0];
+    
     reg temp_data;
     reg [7:0] data1_temp;
     integer i = 0;
@@ -75,7 +77,6 @@ output reg [15:0] pass_2
     integer k_inner = 0;
     reg [7:0] set_cntr = 1;
     integer hit_flag = 0;
-    integer entry = 0;
     integer test_cntr = 0;
     integer inter_set_cntr;
     reg [15:0] internal_1 = 0; //MISS
@@ -108,29 +109,38 @@ output reg [15:0] pass_2
     
     
 //    end
+
+    for(i = 0; i < 128; i = i + 1) //pre-populating cache with 0s
+    begin
+        for(h = 0; h < 2; h = h + 1)
+        begin
+            cache[i][h] = 0;
+        end
+    
+    end
     
     for(i = 0; i < 57962; i = i + 1)
         begin
-            for(h = 0; h < K; h = h + 1)
+            for(h = 0; h < K - 1; h = h + 1)
                 begin
-                    if(data_1[h][0] == i[21:20])
+                    if(cache[0][h] == data_1[i][21:20])
                         begin
                             k_inner = 1;
                             hit_flag = 0;
-                            for(j = 0; j < N+1; j = j + 1)
+                            for(j = 0; j < N-1; j = j + 1)
                                 begin
-                                    if(data_1[h][j] == entry[20:0])
+                                    if(cache[j][h] == data_1[i][20:0])
                                         begin
                                             hit_flag = 1;
                                             test_cntr += 1;
                                         end
                                 end
-                            if(data_1[h][set_cntr] == 0)
+                            if(cache[set_cntr][h] == 0)
                                 begin
-                                    data_1[h][set_cntr] = entry[20:0];
+                                    cache[set_cntr][h] = data_1[i][20:0];
                                     internal_1 += 1; //miss 
                                     //set_cntr = set_counter(h, N, (data_1)); 
-                                    set_cntr = data_1[h][N+1]; 
+                                    set_cntr = cache[N-1][h]; 
                                         if(set_cntr == N)
                                             begin
                                                 set_cntr = 1;
@@ -140,14 +150,14 @@ output reg [15:0] pass_2
                                                 set_cntr += 1;
                                             end
                                     
-                                    data_1[h][N+1] = set_cntr;
+                                    cache[N+1][h] = set_cntr;
                                 end
-                             else if((data_1[h][set_cntr] != 0) && (hit_flag == 1))
+                             else if((cache[set_cntr][h] != 0) && (hit_flag == 1))
                                 begin
                                     internal_2 += 1; //hit
                                    // test_cntr += 1;
-                                    set_cntr = data_1[h][N+1];
-                                        if(set_cntr == N)
+                                    set_cntr = cache[N-1][h];
+                                        if(set_cntr == N-1)
                                             begin
                                                 set_cntr = 1;
                                             end
@@ -155,14 +165,14 @@ output reg [15:0] pass_2
                                             begin
                                                 set_cntr += 1;
                                             end
-                                    data_1[h][N+1] = set_cntr;
+                                    cache[N-1][h] = set_cntr;
                                 end
                              else
                                 begin
-                                    data_1[h][set_cntr] = entry[20:0];
+                                    cache[set_cntr][h] = data_1[i][20:0];
                                     internal_1 += 1; //miss
-                                    set_cntr = data_1[h][N+1];
-                                        if(set_cntr == N)
+                                    set_cntr = cache[N-1][h];
+                                        if(set_cntr == N-1)
                                             begin
                                                 set_cntr = 1;
                                             end
@@ -170,7 +180,7 @@ output reg [15:0] pass_2
                                             begin
                                                 set_cntr += 1;
                                             end
-                                    data_1[h][N+1] = set_cntr;
+                                    cache[N-1][h] = set_cntr;
                                 end   
                         end 
                 end
