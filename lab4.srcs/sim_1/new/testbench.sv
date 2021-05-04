@@ -1,7 +1,5 @@
 `timescale 1ns / 1ps
 
-
-
 module testbench(
 
     );
@@ -11,8 +9,6 @@ module testbench(
     reg [8:0] KN;
     reg [7:0] K;
     reg [7:0] N;
-    reg trace1;
-    reg trace2;
     wire [31:0] pass_1;
     wire [31:0] pass_2;
     wire [31:0] pass_3;
@@ -32,8 +28,6 @@ module testbench(
     .N(N),
     .file1(array_inputs1),
     .file2(array_inputs2),
-    .trace1(trace1),
-    .trace2(trace2),
     .pass_1(pass_1),
     .pass_2(pass_2),
     .pass_3(pass_3),
@@ -46,8 +40,6 @@ module testbench(
         KN = 256;
         K = 2;
         N = 128;
-        trace1 = 0;
-        trace2 = 0;
     end
     
     always @(posedge clk)

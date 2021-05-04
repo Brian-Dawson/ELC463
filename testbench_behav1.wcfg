@@ -5,22 +5,21 @@
    <db_ref_list>
       <db_ref path="testbench_behav.wdb" id="1">
          <top_modules>
-            <top_module name="\$unit_cache_sim_v " />
             <top_module name="glbl" />
             <top_module name="testbench" />
          </top_modules>
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="59999989fs"></ZoomStartTime>
-      <ZoomEndTime time="60000003fs"></ZoomEndTime>
-      <Cursor1Time time="60000000fs"></Cursor1Time>
+      <ZoomStartTime time="2938280fs"></ZoomStartTime>
+      <ZoomEndTime time="2964961fs"></ZoomEndTime>
+      <Cursor1Time time="2942860fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="255"></NameColumnWidth>
       <ValueColumnWidth column_width="82"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="17" />
+   <WVObjectSize size="6" />
    <wvobject fp_name="/testbench/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -29,65 +28,22 @@
       <obj_property name="ElementShortName">reset</obj_property>
       <obj_property name="ObjectShortName">reset</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbench/KN" type="array">
-      <obj_property name="ElementShortName">KN[8:0]</obj_property>
-      <obj_property name="ObjectShortName">KN[8:0]</obj_property>
+   <wvobject fp_name="/testbench/HIT" type="array">
+      <obj_property name="ElementShortName">HIT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">HIT[31:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbench/K" type="array">
-      <obj_property name="ElementShortName">K[7:0]</obj_property>
-      <obj_property name="ObjectShortName">K[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/N" type="array">
-      <obj_property name="ElementShortName">N[7:0]</obj_property>
-      <obj_property name="ObjectShortName">N[7:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/trace1" type="logic">
-      <obj_property name="ElementShortName">trace1</obj_property>
-      <obj_property name="ObjectShortName">trace1</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/trace2" type="logic">
-      <obj_property name="ElementShortName">trace2</obj_property>
-      <obj_property name="ObjectShortName">trace2</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/pass_1" type="array">
-      <obj_property name="ElementShortName">pass_1[15:0]</obj_property>
-      <obj_property name="ObjectShortName">pass_1[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/pass_2" type="array">
-      <obj_property name="ElementShortName">pass_2[15:0]</obj_property>
-      <obj_property name="ObjectShortName">pass_2[15:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/HIT" type="array">
-      <obj_property name="ElementShortName">HIT[15:0]</obj_property>
-      <obj_property name="ObjectShortName">HIT[15:0]</obj_property>
-   </wvobject>
    <wvobject fp_name="/testbench/MISS" type="array">
-      <obj_property name="ElementShortName">MISS[15:0]</obj_property>
-      <obj_property name="ObjectShortName">MISS[15:0]</obj_property>
+      <obj_property name="ElementShortName">MISS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">MISS[31:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbench/file_inputs2" type="array">
-      <obj_property name="ElementShortName">file_inputs2[31:0]</obj_property>
-      <obj_property name="ObjectShortName">file_inputs2[31:0]</obj_property>
+   <wvobject fp_name="/testbench/cache_main/cache_write" type="array">
+      <obj_property name="ElementShortName">cache_write[23:0]</obj_property>
+      <obj_property name="ObjectShortName">cache_write[23:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbench/file_inputs1" type="array">
-      <obj_property name="ElementShortName">file_inputs1[31:0]</obj_property>
-      <obj_property name="ObjectShortName">file_inputs1[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/captured_inputs1" type="array">
-      <obj_property name="ElementShortName">captured_inputs1[23:0]</obj_property>
-      <obj_property name="ObjectShortName">captured_inputs1[23:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/captured_inputs2" type="array">
-      <obj_property name="ElementShortName">captured_inputs2[23:0]</obj_property>
-      <obj_property name="ObjectShortName">captured_inputs2[23:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/r" type="array">
-      <obj_property name="ElementShortName">r[31:0]</obj_property>
-      <obj_property name="ObjectShortName">r[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/testbench/y" type="array">
-      <obj_property name="ElementShortName">y[31:0]</obj_property>
-      <obj_property name="ObjectShortName">y[31:0]</obj_property>
+   <wvobject fp_name="/testbench/cache_main/cache" type="array">
+      <obj_property name="ElementShortName">cache[128:0][1:0][23:0]</obj_property>
+      <obj_property name="ObjectShortName">cache[128:0][1:0][23:0]</obj_property>
    </wvobject>
 </wave_config>
